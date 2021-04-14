@@ -1,0 +1,172 @@
+*{
+  box-sizing: border-box;
+}
+
+*:focus {
+  outline: none!important;
+}
+
+/* html {
+  height: 100%;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  background-repeat:no-repeat;
+  background: -webkit-linear-gradient( to left top, #908670, #dfb228);
+  background: -moz-linear-gradient( to left top,  #908670, #dfb228);
+  background: -ms-linear-gradient( to left top,  #908670, #dfb228);
+  background: -o-linear-gradient( to left top,  #908670, #dfb228);
+  background: linear-gradient( to left top,  #908670, #dfb228);
+} */
+
+body{
+  min-height: 100%;
+  margin: 0;
+  line-height: 1;
+  overflow-x: hidden;
+  /* background: -webkit-linear-gradient( to bottom, #FBDE44FF, #F65058FF) fixed;
+  background: -moz-linear-gradient( to bottom,  #FBDE44FF, #F65058FF);
+  background: -o-linear-gradient( to bottom,  #FBDE44FF, #F65058FF);
+  background: linear-gradient( to bottom,  #FBDE44FF, #F65058FF);
+  background-repeat: no-repeat;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  background-attachment: fixed; */
+  background-color: #28334AFF;
+}
+
+.current-weather-card{
+  margin: 1rem;
+  box-shadow: 1px 1px 30px 0 rgb(250, 250, 250,0.4),
+              -1px -1px 30px 0 rgb(251, 222, 68,0.4);
+  background: linear-gradient( to bottom,  #28334AFF, #F65058FF);
+  /* background-color: #28334AFF; */
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  padding-bottom: 1rem;
+}
+
+.current-header {
+  /* color : #F65058FF; */
+  color: #FBDE44FF;
+  text-transform: uppercase;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-size: 2.3rem;
+}
+
+.current-weather-card .card-header h2{
+  color:  #fbde44;
+}
+
+.current-weather-card .card-header .card-text{
+  color:  #fff;
+  font-size: 1.3rem;
+  font-weight: lighter;
+}
+
+
+.current-weather-card .card-body .card-text{
+  color:  #fff;
+  font-size: 1.3rem;
+  font-weight: lighter;
+}
+
+/* CHOOSE STYLE */
+.choose-weather-card{
+  margin: 1rem;
+  box-shadow: 1px 1px 30px 0 rgb(250, 250, 250,0.4),
+              -1px -1px 30px 0 rgb(246, 80, 88,0.4);
+  background: linear-gradient( to bottom,  #28334AFF, #ad9934);
+  /* background-color: #28334AFF; */
+  background-repeat: no-repeat;
+  background-size: cover;
+  /* background-attachment: fixed;  IMPORTANT --------------*/
+  height: 80%;
+}
+
+.choose-header {
+  /* color : #F65058FF; */
+  color: #F65058FF;
+  text-transform: uppercase;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-size: 2.3rem;
+}
+
+.choose-weather-card .card-header h2{
+  color:  #F65058FF;
+  display: block;
+  margin: auto;
+  /* padding: 0.1rem 0rem!important; */
+}
+
+.city-selector {
+  background-color: rgba(0, 0, 0, 0.6);
+  color:  #fff;
+  font-size: 1.3rem;
+  font-weight: lighter;
+  border-radius: 2rem;
+  padding: 0.1rem 2rem;
+}
+
+.country-selector:hover {
+  background-color: #fff;
+  color: rgba(0, 0, 0);
+}
+
+.country-selector {
+  background-color: rgba(0, 0, 0, 0.1);
+  color: #F65058FF;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-size: 2.3rem;
+  border-radius: 2rem;
+  padding: 0.2rem 2rem;
+  max-width: 250px;
+}
+
+.country-selector:hover {
+  background-color: #F65058FF;
+  color: rgba(0, 0, 0, 0.5);
+}
+
+
+
+
+
+
+/* Defaults */
+.temp-text {
+  font-family: cursive;
+  color: #fff;
+  font-size:3.5rem!important;
+  font-weight:bold!important;
+}
+
+.weather-icon{
+  min-width: 120px;
+  padding: 1rem auto 0rem !important;
+}
+
+.weather-text{
+  color: #fff;
+  font-size:2rem!important;
+  margin-block: -1.8rem;
+  /* font-weight:light!important; */
+}
+
+.day-text{
+  color: #fff;
+  font-family: cursive;
+  font-size:2.5rem!important;
+  margin-top: 3rem;
+  font-weight:100!important;
+  background-color: rgba(40, 51, 74,0.35);
+  padding: 0.5rem 1rem 1rem;
+  max-width: 280px;
+  border-radius: 3.5rem;
+  display: block;
+  margin: 4rem auto 0;
+}
