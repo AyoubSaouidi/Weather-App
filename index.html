@@ -2,75 +2,89 @@
 <html>
 
 <head>
-  <!-- BOOTSTRAP.v4 required META-->
-  <meta charset="UTF-8">
-  <!-- Bootstrap.v4 META intializing screen -->
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <!-- BOOTSTRAP.v4 Link -->
-  <link rel="stylesheet" href="bootstrap-4.6.0-dist/css/bootstrap-grid.min.css">
-  <link rel="stylesheet" href="bootstrap-4.6.0-dist/css/bootstrap.min.css">
-  <!-- my CSS styleSheet Link -->
-  <link rel="stylesheet" href="styles.css">
+    <!-- BOOTSTRAP.v4 required META-->
+    <meta charset="UTF-8">
+    <!-- Bootstrap.v4 META intializing screen -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- BOOTSTRAP.v4 Link -->
+    <link rel="stylesheet" href="bootstrap-4.6.0-dist/css/bootstrap-grid.min.css">
+    <link rel="stylesheet" href="bootstrap-4.6.0-dist/css/bootstrap.min.css">
+    <!-- my CSS styleSheet Link -->
+    <link rel="stylesheet" href="styles.css">
 
-  <!-- TITLE -->
-  <title>Weather App</title>
+    <!-- TITLE -->
+    <title>Weather App</title>
 </head>
 
-<body>
-  <div class="container-fluid p-0">
-    <div class="row">
-      <div class="col-sm-12 col-md-6 pt-3 mb-5">
-        <h2 class="text-center current-header">Your location</h2>
-        <hr class="w-75">
-        <div class="card rounded-pill current-weather-card" id="currentLocalisationWeatherCard">
-          <div class="card-header rounded" id="currentHeader">
-            <!-- Position DATA IN HERE -->
-          </div>
-          <div class="card-body">
-            <div class="current-img-wrapper">
-              <!-- Weather DATA IN HERE -->
+<body class="page">
+    <nav class="navbar py-2 w-100 app-nav">
+        <a href="#" class="navbar-brand pl-1 app-brand">&#x1F5FA;World's <span class="tiny-brand">Weather</span></a>
+    </nav>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-sm-12 col-md-6 pt-3 mb-5">
+                <h2 class="text-center current-header">Your location</h2>
+                <hr class="w-75">
+                <div class="card rounded current-weather-card" id="currentLocalisationWeatherCard">
+                    <div class="card-header rounded" id="currentHeader">
+                        <!-- Position DATA IN HERE -->
+                    </div>
+                    <div class="card-body">
+                        <div class="current-img-wrapper">
+                            <!-- Weather DATA IN HERE -->
+                            <div id="currentLoader" class="text-center">
+                                <div class="spinner-grow text-light" style="width:5rem;height:5rem;margin: 2rem auto;" role="status">
+                                    <span class="sr-only">Loading...</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-          </div>
-        </div>
-      </div>
-      <div class="col-sm-12 col-md-6 pt-3">
-        <h2 class="text-center choose-header">Choose a location</h2>
-        <hr class="w-75">
-        <div class="card rounded-pill choose-weather-card" id="currentLocalisationWeatherCard">
-          <div class="card-header rounded">
-            <!-- Country Selector -->
-            <select class="d-block m-auto select-header card-text text-center country-selector choose-header-text" id="countrySelector">
-              <option value="blank_" class="text-center">------------</option>
-            </select>
-            <!-- City Selector -->
-            <select class="d-block m-auto select-header card-text text-center  choose-header-text city-selector" id="citySelector">
-              <option value="blank_" class="text-center">---------</option>
-            </select>
-          </div>
-          <div class="card-body">
-            <div class="choose-img-wrapper">
-              <p class="card-text text-center temp-text">30°C</p>
-              <!-- <img src="http://openweathermap.org/img/wn/${data.current.weather[0].icon}@2x.png" alt="Weather Icon" -->
-                class="img-fluid d-block mx-auto weather-icon">
-              <p class="card-text text-center weather-text">light rain</p>
-              <p class="card-text text-center day-text">Tuesday</p>
+            <div class="col-sm-12 col-md-6 pt-3">
+                <h2 class="text-center choose-header">Chose a location</h2>
+                <hr class="w-75">
+                <div class="card rounded choose-weather-card" id="currentLocalisationWeatherCard">
+                    <div class="card-header rounded">
+                        <!-- Country Selector -->
+                        <select class="d-block m-auto select-header card-text text-center country-selector choose-header-text" id="countrySelector">
+                            <option value="blank_" class="text-center">------------</option>
+                        </select>
+                        <!-- City Selector -->
+                        <select class="d-block m-auto select-header card-text text-center  choose-header-text city-selector" id="citySelector">
+                            <option value="blank_" class="text-center">---------</option>
+                        </select>
+                    </div>
+                    <div class="card-body">
+                        <div class="choose-img-wrapper">
+                            <!-- Data in Here -->
+                            <!-- <div id="chooseLoader" class="text-center d-flex justify-content-center align-items-center">
+                                <div class="spinner-border" style="width:5rem;height:5rem;margin: 2rem auto;" role="status">
+                                    <span class="sr-only">Loading...</span>
+                                </div>
+                            </div> -->
+                        </div>
+                    </div>
+                </div>
             </div>
-          </div>
         </div>
-      </div>
+        <div id="globalLoader" class="justify-content-center align-items-center w-100">
+            <div class="spinner-border text-warning" style="width: 7.5rem;height:7.5rem;" role="status">
+                <span class="sr-only">Loading...</span>
+            </div>
+        </div>
     </div>
-  </div>
-  <!-- BOOTSTRAP.V4 (jQuery & JS) -->
-  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
-    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
-    crossorigin="anonymous"></script>
-  <script src="bootstrap-4.6.0-dist/js/bootstrap.bundle.min.js"></script>
-  <script src="bootstrap-4.6.0-dist/js/bootstrap.min.js"></script>
-  <!-- my JS Script -->
-  <script type="text/javascript" src="service.js"></script>
-  <script type="text/javascript" src="model.js"></script>
-  <script type="text/javascript" src="view.js"></script>
-  <script type="text/javascript" src="app.js"></script>
+
+    <!-- BOOTSTRAP.V4 (jQuery & JS) -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="bootstrap-4.6.0-dist/js/bootstrap.bundle.min.js"></script>
+    <script src="bootstrap-4.6.0-dist/js/bootstrap.min.js"></script>
+    <!-- my JS Script -->
+    <script type="text/javascript" src="loader.js"></script>
+    <script type="text/javascript" src="service.js"></script>
+    <script type="text/javascript" src="model.js"></script>
+    <script type="text/javascript" src="view.js"></script>
+    <script type="text/javascript" src="app.js"></script>
 </body>
 
 </html>
